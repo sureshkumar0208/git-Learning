@@ -1,0 +1,41 @@
+01 . to compare two JSON have the same properties without order?
+    a. var obj1 = { name: "Person 1", age 5}; 
+    b var obj2 = { age 5, name: "Person 1"},
+
+solution ;
+    By comparing the two term of JSON should have the same properties without order by haviing the sort method in the if class method to done as a program .
+    When working with JSON objects in JavaScript, we may encounter situations where we need to compare two JSON objects to see if they contain the same properties and values, regardless of the order of those properties.
+
+PROGRAM:
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+
+function isEqual(object1,object2){
+
+    var keys1 = Object.keys(object1).sort();
+    var keys2 = Object.keys(object2).sort();
+
+    if (keys1.length !== keys2.length) {
+        return false;
+    }
+
+    for (var i = 0; i < keys1.length; i++) {
+        if (keys1[i] !== keys2[i]) {
+            return false;
+        }
+    }
+    for (var key of keys1) {
+        if (object1[key] !== object2[key]) {
+            return false;
+        }
+    }
+    return true;
+}
+var obj1 = { name: "Person 1", age: 5 };
+        </script>
+    </body>
+</html>
